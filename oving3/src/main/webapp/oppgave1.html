@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Oppgave 1</title>
+    <script>
+        window.onload = function() {
+            var bilde = document.getElementById("bilde");
+
+            bilde.onmouseover = function () {
+                bilde.src = "bilde2.png";
+            };
+
+            bilde.onmouseout = function () {
+                bilde.src = "bilde1.jpg";
+            };
+        }
+    </script>
+</head>
+<body>
+<img src="bilde1.jpg" id="bilde">
+</body>
+</html>

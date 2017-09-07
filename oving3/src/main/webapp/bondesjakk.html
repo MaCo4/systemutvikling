@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bondesjakk</title>
+    <style type="text/css">
+        #bondesjakkbrett { 
+            width:300px;
+            height:300px;
+            border: 3px solid black;
+        }
+        
+        .tabellrute { 
+            background-color: #ccc;
+        }
+
+        .spiller1rute {
+            background-color: red;
+        }
+
+        .spiller2rute {
+            background-color: blue;
+        }
+    </style>
+	<script>
+        function klikk() {
+            if (this.className === "tabellrute") {
+                this.className = "spiller1rute";
+            }
+
+            else {
+                this.className = "tabellrute";
+            }
+        }
+
+        function dobbelklikk() {
+            if (this.className === "tabellrute") {
+                this.className = "spiller2rute";
+            }
+        }
+
+		window.onload = function () {
+            var ruter = document.getElementsByClassName("tabellrute");
+
+            for (var i = 0; i < ruter.length; i++) {
+                var rute = ruter[i];
+                rute.addEventListener("click", klikk);
+                rute.addEventListener("dblclick", dobbelklikk);
+            }
+        }
+	</script>
+</head>
+
+<body>
+<h1>Spill bondesjakk! </h1>
+<p>
+Her kan to personer spille bondesjakk. N&aring;r
+f&oslash;rstemann (r&oslash;dt) velger rute, klikker han en gang, og
+n&aring;r andremann (gr&oslash;nt) velger rute, dobbeltklikker han.
+</p>
+
+<table id="bondesjakkbrett">
+	<tr>
+	       <td class="tabellrute"></td>
+	       <td class="tabellrute"></td>
+	       <td class="tabellrute"></td>
+	</tr>
+	<tr>
+	       <td class="tabellrute"></td>
+	       <td class="tabellrute"></td>
+	       <td class="tabellrute"></td>
+	</tr>
+	<tr>
+	       <td class="tabellrute"></td>
+	       <td class="tabellrute"></td>
+	       <td class="tabellrute"></td>
+	</tr>
+<table>
+
+<p>Du m&aring; laste inn siden p&aring; nytt for &aring; starte et nytt spill.</p>
+</body>
+</html>

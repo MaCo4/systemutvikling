@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Oppgave 3</title>
+    <script>
+        window.onload = function () {
+            var dagensdato = new Date();
+            var julaften = new Date(2017, 12, 24);
+            var dager = Math.round((julaften.getTime() - dagensdato.getTime()) / (1000*60*60*24));
+            var result = document.getElementById("result");
+            result.innerHTML = "Det er " + dager + " dager igjen til julaften";
+            if (dager < 90 && dager > 30) {
+                result.style = "color: green";
+            }
+            else if (dager < 30) {
+                result.style = "color: red";
+            }
+        }
+    </script>
+</head>
+<body>
+<p id="result"></p>
+</body>
+</html>
