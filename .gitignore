@@ -23,3 +23,6 @@ hs_err_pid*
 
 # Maven, Tomcat
 */target/
+
+*.iml
+*/.idea/

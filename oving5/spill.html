@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Irriterende spill</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        var boxWidth = 50;
+        var boxHeight = 50;
+
+        function getRandomPos() {
+            return {
+                x: Math.random() * (window.innerWidth - boxWidth),
+                y: Math.random() * (window.innerHeight - boxHeight)
+            };
+        }
+
+        $(function () {
+            $("#box")
+            .mouseover(function () {
+                var newPos = getRandomPos();
+                $(this).animate({left: newPos.x, top: newPos.y}, "fast");
+            })
+            .mousedown(function () {
+                $(this).stop().fadeOut();
+            })
+            .width(boxWidth)
+            .height(boxHeight);
+        });
+    </script>
+    <style>
+        div#box {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            background-color: #10a;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+</body>
+</html>
